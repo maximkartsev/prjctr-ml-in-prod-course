@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: dummy-pod
+spec:
+  containers:
+  - name: dummy-server
+    image: ghcr.io/maximkartsev/prjctr-ml-in-prod-course/dummy-fastapi-server:latest
+    ports:
+    - containerPort: 8000
+#  imagePullSecrets:
+#  - name: ghcr-secret
