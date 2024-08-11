@@ -7,7 +7,7 @@
 - hw1\container\Dockerfile - dockerfile to create container with the server
 
 #### Build Docker image
-- go to the `<root>\ `
+- go to the `<root>\hw1\container`
 - run `docker build -t ghcr.io/maximkartsev/prjctr-ml-in-prod-course/dummy-fastapi-server:latest .`
 
 #### Push the Docker image to GitHub Packages
