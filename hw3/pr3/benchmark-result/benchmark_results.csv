@@ -1,0 +1,11 @@
+,Save Time (s),Load Time (s)
+CSV,1.32,0.22
+Pickle,0.04,0.04
+Feather,0.11,0.06
+Parquet,0.15,0.08
+npy,0.04,0.04
+HDF5,0.13,0.05
+NetCDF4,0.08,0.09
+JSON,0.33,0.44
+Excel,25.10,10.83
+Graph,3.08,0.04
