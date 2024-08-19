@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dummy-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: dummy-job
+        image: ghcr.io/maximkartsev/prjctr-ml-in-prod-course/dummy-fastapi-server:latest
+        command: ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+#      imagePullSecrets:
+#      - name: ghcr-secret
+      restartPolicy: Never
+  backoffLimit: 4

@@ -27,3 +27,44 @@ Repository Settings -> Secrets and variables -> Actions -> New repository secret
 
 GitHub Personal Access Token (PAT) should have correct permissions. `read:packages` and `write:packages` required.
 Settings -> Developer Settings -> Personal access tokens -> Tokens (classic)
+
+## YAML definition for Pod, Deployment, Service and Job
+
+#### Files:
+- hw1\k8s\deployment.yaml
+- hw1\k8s\job.yaml
+- hw1\k8s\pod.yaml
+- hw1\k8s\service.yaml
+
+
+### How to run
+
+1. Run `kind create cluster`
+2. I did the dummy-fastapi-server package public, but for private packages may require authorization and uncomment `imagePullSecrets` section in k8s files:
+    ```bash
+       kubectl create secret docker-registry ghcr-secret \
+       --docker-server=ghcr.io \
+       --docker-username=your-github-username \
+       --docker-password=your-github-token \
+       --docker-email=your-email@example.com
+    ```
+3. Go to the `<root>hw1\` folder, run:
+    ```bash
+       kubectl apply -f k8s/pod.yaml
+       kubectl apply -f k8s/deployment.yaml
+       kubectl apply -f k8s/service.yaml
+       kubectl apply -f k8s/job.yaml
+   ```
+4. To check status, run the next commands:
+    ```bash
+       kubectl get pods
+       kubectl get deployments
+       kubectl get services
+       kubectl get jobs
+    ```
+   The result should be like the next:  
+   ![img.png](../img/img.png)
+5. Forward ports by running `kubectl port-forward service/dummy-service 8000:8000`
+6. Go to the `localhost:8080`:  
+   ![img2.png](../img/img2.png)
+    
