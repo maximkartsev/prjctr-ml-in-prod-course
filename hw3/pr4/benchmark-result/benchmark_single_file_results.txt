@@ -1,0 +1,4 @@
+Single-threaded: 3.6335 seconds
+Multi-threaded (4 threads): 121.8137 seconds
+Multi-processing (4 processes): 47.4908 seconds
+Asynchronous I/O: 4.7532 seconds
