@@ -1,0 +1,8 @@
+version: '3.8'
+
+services:
+  pandas_benchmark:
+    build: .
+    volumes:
+      - ./benchmark-result:/app/output  # Maps the external folder 'output' to the internal '/app/output'
+    command: python3 benchmark_1000_files.py

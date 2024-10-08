@@ -1,0 +1,3 @@
+Single-threaded (1000 files): 111.1569 seconds
+Multi-threaded (1000 files, 4 threads): 28.7620 seconds
+Multi-processing (1000 files, 4 processes): 29.0377 seconds
