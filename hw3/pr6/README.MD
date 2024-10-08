@@ -1,5 +1,4 @@
-# MosaicML StreamingDataset
-
+# Homework 3 - PR6: Develop code for converting your dataset into the StreamingDataset format. MosaicML StreamingDataset.
 ## Project Description
 
 This project is a FastAPI-based server with three main endpoints:

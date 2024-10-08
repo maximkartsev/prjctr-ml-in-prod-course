@@ -1,4 +1,4 @@
-# HW2
+# L2: Infrastructure
 
 ## Dummy docker file with a simple server
 

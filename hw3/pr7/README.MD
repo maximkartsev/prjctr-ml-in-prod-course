@@ -1,4 +1,4 @@
-# RAG
+# Homework 3 - PR7: Write code for transforming your dataset into a vector format, and utilize VectorDB for ingestion and querying (RAG)
 
 ## Project Description
 
