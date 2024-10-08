@@ -4,13 +4,13 @@ FROM python:3.9
 # Set the working directory to /app
 WORKDIR /app
 
-# Copy the current directory contents into the container at /app
-COPY . /app
-
-# Install dependencies
+# Copy only requirements.txt first and install dependencies
+COPY requirements.txt /app/requirements.txt
 RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install --no-cache-dir -r /app/requirements.txt
+# Copy the rest of the application files
+COPY . /app
 
 # Expose port 8000
 EXPOSE 8000
