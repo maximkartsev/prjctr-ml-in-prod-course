@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  minio:
+    image: minio/minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    command: server /data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  minio-client:
+    build: .
+    depends_on:
+      - minio
+    environment:
+      MINIO_ENDPOINT: minio:9000  # Ensure port 9000 is used
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+      MINIO_USE_SSL: "0"
+    volumes:
+      - ./test_results:/app/test_results
+    command: sh -c "sleep 10 && pytest --junitxml=/app/test_results/results.xml"
