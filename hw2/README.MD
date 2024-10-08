@@ -63,8 +63,8 @@ Settings -> Developer Settings -> Personal access tokens -> Tokens (classic)
        kubectl get jobs
     ```
    The result should be like the next:  
-   ![img.png](../img/img.png)
+   ![img.png](img/img.png)
 5. Forward ports by running `kubectl port-forward service/dummy-service 8000:8000`
 6. Go to the `localhost:8080`:  
-   ![img2.png](../img/img2.png)
+   ![img2.png](img/img2.png)
     
